@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 let KWXUploadAppsFlyerStatisticsKey = "KWXUploadAppsFlyerStatisticsKey"
 let kWXNetworkResponseCache         = "kWXNetworkResponseCache"
@@ -73,6 +74,9 @@ public class WXRequestConfig {
 
     ///全局网络请求拦截类代理 (提示: 一定要放在首次发请求之前才生效)
     public var urlSessionProtocolClasses: AnyClass? = nil
+    
+    ///全局网络请求拦截类代理 (提示: 一定要放在首次发请求之前才生效)
+    public var urlSessionDelegate: SessionDelegate = SessionDelegate()
 
     ///是否禁止所有的网络请求设置代理抓包 (警告: 一定要放在首次发请求之前设值(例如+load方法中), 默认不禁止)
     public var forbidProxyCaught: Bool = false

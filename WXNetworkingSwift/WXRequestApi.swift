@@ -39,7 +39,7 @@ fileprivate var WXSession: Session = {
    if wxConfig.forbidProxyCaught == true {
        sessionConfig.connectionProxyDictionary = [ : ]
    }
-   let session = Session(configuration: sessionConfig)
+    let session = Session(configuration: sessionConfig, delegate: wxConfig.urlSessionDelegate)
    return session
 }()
 
